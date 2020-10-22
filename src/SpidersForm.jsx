@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { StoreContext } from './App';
+import { StoreContext } from './store/store';
 
 export const SpidersForm = () => {
   const store = useContext(StoreContext);

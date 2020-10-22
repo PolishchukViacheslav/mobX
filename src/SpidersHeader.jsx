@@ -1,6 +1,6 @@
 import { useObserver } from 'mobx-react';
 import React, { useContext } from 'react';
-import { StoreContext } from './App';
+import { StoreContext } from './store/store';
 
 export const SpidersHeader = () => {
   const store = useContext(StoreContext);

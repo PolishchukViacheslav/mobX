@@ -1,25 +1,10 @@
-import { useLocalStore, useObserver } from 'mobx-react';
 import React, { useContext } from 'react';
+import { useObserver } from 'mobx-react';
 import './App.css';
 import { myTimer, TimerView } from './mobx';
 import { SpidersForm } from './SpidersForm';
 import { SpidersHeader } from './SpidersHeader';
-
-export const StoreContext = React.createContext();
-const StoreProvider = ({ children }) => {
-  const store = useLocalStore(() => ({
-    spiders: ['Caracurt'],
-    addSpider: (spider) => {
-      store.spiders.push(spider);
-    },
-    get getSpidersCount() {
-      return store.spiders.length;
-    },
-  }));
-  return (
-    <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
-  );
-};
+import { StoreContext, StoreProvider } from './store/store';
 
 const SpidersList = () => {
   const store = useContext(StoreContext);
